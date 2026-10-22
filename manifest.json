@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Solo Warrior V13",
+  "version": "13.0.0",
+  "description": "Solo Warrior V13 with stronger max profile, smoother loudness tuning, Stereo Pan and Auto Pan controls.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://discord.com/*",
+    "*://*.discord.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://discord.com/*",
+        "https://*.discord.com/*"
+      ],
+      "js": [
+        "loader.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "injector.js",
+        "solo-warrior-stereo-pan.js",
+        "solo-warrior-stereo-pan.css"
+      ],
+      "matches": [
+        "https://discord.com/*",
+        "https://*.discord.com/*"
+      ]
+    }
+  ]
+}
